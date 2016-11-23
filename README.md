@@ -62,3 +62,4 @@ var HelloMsg = React.createClass();
 	this.refs.inputTxt-->拿到真实的DOM节点
 }
 </div>
+<h3>demo将会放在code和issues里面</h3>
