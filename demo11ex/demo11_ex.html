@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="js/react.js"></script>
+	<script src="js/react-dom.js"></script>
+	<script src="js/browser.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<script type="text/babel">
+		var MainComponent = React.createClass({
+			getInitialState:function(){
+				return {inputResult:''}
+			},
+			handleOnChange:function(result){
+				console.log('result in main is'+result);
+				this.setState({inputResult:result});
+			},
+			 handleOnClick:function(){
+      			alert(this.state.inputResult);
+   			},
+			render:function(){
+				return <div>
+					<AComponent funcChange={this.handleOnChange}/>
+					<BComponent funcClick={this.handleOnClick}/>
+				</div>
+			}
+		});
+
+		var AComponent = React.createClass({
+			handleChange:function(){
+				this.props.funcChange(this.refs.inputTxt.value);
+			},
+			render:function(){
+				return <input type="text" ref="inputTxt" onChange={this.handleChange}/s>
+			}
+		});
+
+		var BComponent = React.createClass({
+			handleClick:function(){
+				this.props.funcClick();
+			},
+			render:function(){
+				return <button onClick={this.handleClick}>点击</button>
+			}
+		});
+
+		ReactDOM.render(
+			<MainComponent/>,
+			document.getElementById('example')
+		);
+	</script>
+</body>
+</html>
+
