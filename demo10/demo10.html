@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="js/react.js"></script>
+	<script src="js/react-dom.js"></script>
+	<script src="js/browser.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<script type="text/babel">
+		var MainComponent = React.createClass({
+			handlerOnClick:function(){
+				alert('这是复合组件中的click方法');
+			},
+			render:function(){
+				return <div>
+					<h1>复合组件</h1>
+					<ButtonComponent funcName={this.handlerOnClick}/>
+				</div>
+			}
+		});
+
+		var ButtonComponent = React.createClass({
+			handleClick:function(){
+				this.props.funcName();
+			},
+			render:function(){
+				return <button onClick={this.handleClick}>点击</button>
+			}
+		});
+
+		ReactDOM.render(
+			<MainComponent/>,
+			document.getElementById('example')
+		);
+	</script>
+</body>
+</html>
+
