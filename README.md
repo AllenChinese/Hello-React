@@ -36,7 +36,6 @@ React is a JavaScript library for building user interfaces.<br/>
 	<li>react.js(React的核心库)</li>
 	<li>react-dom.js(提供与DOM相关的功能)</li>
 	<li>browser.js(将JSX语法转换为JavaScript语法)</li>
-	<li><script type="text/babel"></script></li>
 </ul>
 <h3>5、JSX</h3>
 基本语法：
