@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/react.js"></script>
+	<script src="js/react-dom.js"></script>
+	<script src="js/browser.min.js"></script>
+</head>
+<body>
+<!-- 视图区 -->
+	<div id="example"></div>
+	<script type="text/babel">
+		var HelloMsg = React.createClass({
+			render:function(){
+				return <div>
+					<h1>Hello Components</h1>
+					<p>This is Allen</p>
+					<HelloRes/>
+				</div>
+			}
+		});
+
+		var HelloRes = React.createClass({
+			render:function(){
+				return <h2>Hello</h2>
+			}
+		});
+
+		ReactDOM.render(
+			<HelloMsg/>,
+			document.getElementById('example')
+		);
+	</script>
+</body>
+</html>
