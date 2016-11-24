@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="js/react.js"></script>
+	<script src="js/react-dom.js"></script>
+	<script src="js/browser.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<script type="text/babel">
+		var TestRef = React.createClass({
+			handleClick:function(){
+				alert(this.refs.inputText.value);
+			},
+			render:function(){
+				return <div>
+					<input type="text" ref="inputText"/>
+					<button onClick={this.handleClick}>取值</button>
+				</div>
+			}
+		});
+
+		ReactDOM.render(
+			<TestRef/>,
+			document.getElementById('example')
+		);
+	</script>
+</body>
+</html>
+
